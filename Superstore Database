@@ -1,0 +1,36 @@
+CREATE TABLE ecom_data (
+    user_id VARCHAR(50),
+    session_duration INT,
+    purchase_flag BIT,
+    amount_spent DECIMAL(10, 2),
+    item_name VARCHAR(50)
+);
+
+INSERT INTO ecom_data (user_id, session_duration, purchase_flag, amount_spent, item_name)
+VALUES
+    ('aBcDeF123456', 3, 1, 25.50, 'Wireless Earbuds'),
+    ('gHiJkL789012', 4, 0, 0.00, NULL),
+    ('mNoPqR345678', 6, 1, 75.20, 'Smartphone Case'),
+    ('sTuVwX901234', 2, 0, 0.00, NULL),
+    ('yZaBcD567890', 5, 1, 10.75, 'Portable Charger'),
+    ('eFgHiJ123456', 4, 0, 0.00, NULL),
+    ('kLmNoP789012', 1, 1, 50.00, 'Bluetooth Speaker'),
+    ('qRsTuV345678', 2, 0, 0.00, NULL),
+    ('wXyZaB901234', 3, 1, 20.90, 'Fitness Tracker'),
+    ('zN53qR345321', 6, 1, 75.20, 'Smartphone Case'),
+    ('QrSFgH561764', 1, 1, 50.00, 'Bluetooth Speaker'),
+
+
+#Use a SELECT statement to order the items by price.
+SELECT item_name, price
+FROM superstore
+ORDER BY price desc;
+
+#Show a statistic about the item prices.
+SELECT avg(price)
+FROM superstore;
+
+#Show a statistic about the price for items in the category of "Kitchen Supplies". 
+SELECT avg(price)
+FROM superstore
+WHERE category="Kitchen Supplies"
